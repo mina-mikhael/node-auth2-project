@@ -6,6 +6,9 @@
   If no fallback is provided, TESTS WON'T WORK and other
   developers cloning this repo won't be able to run the project as is.
  */
-module.exports = {
+require("dotenv").config();
 
-}
+const JWT_SECRET = process.env.JWT_SECRET || "shh";
+const BCRYPT_ROUNDS = process.env.BCRYPT_ROUNDS || 12;
+
+module.exports = { JWT_SECRET, BCRYPT_ROUNDS };
