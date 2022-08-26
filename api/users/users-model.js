@@ -63,7 +63,6 @@ async function findById(user_id) {
     .leftJoin("roles as r", "u.role_id", "r.role_id")
     .select("u.user_id", "u.username", "r.role_name")
     .where("u.user_id", user_id);
-
   return currentUser;
 }
 
