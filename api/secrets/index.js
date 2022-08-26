@@ -9,6 +9,6 @@
 require("dotenv").config();
 
 const JWT_SECRET = process.env.JWT_SECRET || "shh";
-const BCRYPT_ROUNDS = process.env.BCRYPT_ROUNDS || 12;
+const BCRYPT_ROUNDS = Number(process.env.BCRYPT_ROUNDS) || 12;
 
 module.exports = { JWT_SECRET, BCRYPT_ROUNDS };

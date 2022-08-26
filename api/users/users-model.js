@@ -43,7 +43,8 @@ async function findBy(filter) {
   const foundUser = await db("users as u")
     .leftJoin("roles as r", "u.role_id", "r.role_id")
     .select("u.user_id", "u.username", "u.password", "r.role_name")
-    .where(filter);
+    .where(filter)
+    .first();
   return foundUser;
 }
 
